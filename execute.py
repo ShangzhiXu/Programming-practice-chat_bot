@@ -39,7 +39,8 @@ def getScript(script,setting_set,step_set):
             else:
                 break
 
-
+def a():
+    pass
 def execute(step_name):
     print(step_set[step_name][0].speak_words)  # speak
     user_input = input()  # listen
@@ -79,3 +80,5 @@ input_file.close()
 """
 这个其实好实现的
 """
+
+#记录：真的是惊心动魄的github记录
