@@ -1,0 +1,34 @@
+Setting
+  NAME Michael_chatbot
+  VERSION 1.0
+  COPY_RIGHT @michael_2021.0.26
+  START welcome
+  EXIT exit
+Step welcome
+  Speak How are you
+  Listen 10
+  Branch good good,0,complaint
+  Branch angry|bad|not good,0,complaint
+  Branch ok,0,default
+  Branch check,0,check
+Step complaint
+  Speak what would you like to compliant?
+  Listen 10
+  Branch ?,0,apologize
+  Branch ok,0,default
+  Branch check,0,check
+Step apologize
+  Speak sorry
+  Listen 10
+  Branch ok,0,default
+Step check
+  Speak you have 100¥
+  Listen 10
+  Branch ok,0,default
+Step default
+  Speak Is there anything else that I can help you？
+  Listen 30
+  Branch check,0,check
+Step exit
+  Speak Good bye, have a good day!
+  Listen 0
