@@ -12,7 +12,9 @@ from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 from nltk.util import ngrams
 
-from src import correct
+from chat_bot.src.correct import correct
+from chat_bot.src.correct import correct_food
+from chat_bot.src.correct import correct_wine
 
 
 class Input_purify:
@@ -94,21 +96,27 @@ class Input_purify:
         self.words_token = synonyms;
         self.words_tag = nltk.pos_tag(self.words_token)
 
-    def word_correction(self):
+    def word_correction(self,field):
         """
         此函数主要用于修正用户输入中的错误
         用法：
-        >>> words.word_correction()
+        >>> words.word_correction(field)
         例如用户输入：cheeck，将会修改为check，用户输入：wrod修改为word
         但是对于少写一些字母，例如chck，将无法修改，因为可能的情况太多了
-        机器学习依托big.txt进行训练。
+        机器学习依托txt文件进行训练。
         :return:
         """
         s = []
         for i in self.words_token:
-            print(i)
-            print(correct.correct(i))
-            s.append(correct.correct(i))
+            print("input: "+i)
+            if field == 'food':
+                corrected = correct_food.correct(i)
+            elif field == 'wine':
+                corrected = correct_wine.correct(i)
+            else:
+                corrected = correct.correct(i)
+            print("After correction: "+corrected )
+            s.append(corrected)
         self.words_token = s
 
 class Words_Match:
@@ -158,4 +166,58 @@ class Words_Match:
             match_tuple = tuple(match_word.split(" "))
             if  match_tuple == i :
                 return 1
+
+
+def getPara(match_setting,field,Input_purify):
+        """
+
+        :param match_setting: 匹配设置
+
+        *********************************
+        匹配模式：
+        0 默认模式，只有用户输入中包含待匹配词组，才会跳转
+        1 纠错模式，修正用户输入中的错误，
+                例如用户输入：cheeck，将会修改为check
+                用户输入：wrod修改为word
+                但是对于少写一些字母，例如chck，将无法修改
+        2 词干获取，用户输入可能包含不同词性，例如用户输入"playing"，
+                会将该单词转化为"play"并保存，默认保存为动词格式，如"I"保存为"be"
+        4 去除非关键词， 去除用户输入中的例如'I'，'a'，'an'等常出现的非关键词汇，
+                依托nltk的停止词汇表得出删除的词汇，
+                该表由11种语言的2400个停止字组成，
+                见http://nltk.org/book/ch02.html
+        8 使用同义词，由于在英语中，可能用户来自不同地区，有不同习惯，
+                依托ntlk的wordnet实现同义词获取
+                例如用户输入"check"，
+                将会保存下如"cheque""tick""stop"等穷举出来的同义词，
+                脚本用户在编写时可以不需要穷举各种情况
+                注意：只适用于处理单个词汇，如"play"，短语如："how much"暂时不支持
+
+        这里采用二进制的表示方式，windows部分API中也使用了类似方式
+        例如要同时使用：
+            词干获取和去除非关键词，就输入6，也就是二者之和
+            纠错模式和词干获取，就输入3，也就是二者之和
+
+        *********************************
+        :param Input_purify 用户输入
+        :return:
+        用法：
+        >>> getPara(match_setting,field,purified_user_input)
+        """
+
+        bin_setting = int(bin(int(match_setting)),2)
+        if bin_setting == 0b0:
+            pass;
+        if bin_setting & 0b0001 != 0:
+            f = field
+            Input_purify.word_correction(field)
+        if bin_setting & 0b0010 != 0:
+            Input_purify.get_stem()
+        if bin_setting & 0b0100 != 0:
+            Input_purify.delete_stopwords()
+        if bin_setting & 0b1000 != 0:
+            Input_purify.use_synonym()
+
+
+
 

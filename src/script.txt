@@ -4,10 +4,11 @@ Setting
   COPY_RIGHT @michael_2021.0.26
   START welcome
   EXIT exit
+  FIELD wine
 Step welcome
   Speak How are you
   Listen 10
-  Branch good good,0,complaint
+  Branch good,3,complaint
   Branch angry|bad|not good,0,complaint
   Branch ok,0,default
   Branch check,0,check

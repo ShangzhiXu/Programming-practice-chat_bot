@@ -4,8 +4,8 @@
 @ 功能：输入为用户编写的脚本语言文件，格式为.txt，该模块生成语法树
 @ 工具：parse === copyright 2012-2021 Richard Jones <richard@python.org>
 """
-from src.parse import *
-from src.parse import compile
+from chat_bot.src.parse import *
+from chat_bot.src.parse import compile
 
 
 class Setting:
@@ -29,6 +29,7 @@ class Setting:
     parse_list = []     #保存可处理的语句格式
     start = "welcome"
     exit = "exit"
+    field = "default"
     def __init__(self):
         """
         初始化函数，设定Setting类可以识别的语句
@@ -42,6 +43,7 @@ class Setting:
         self.parse_list.append(compile('  COPY_RIGHT {:^}'))
         self.parse_list.append(compile('  START {:^}'))
         self.parse_list.append(compile('  EXIT {:^}'))
+        self.parse_list.append(compile('  FIELD {:^}'))
 
     def get_para(self, words):
         """
@@ -75,6 +77,10 @@ class Setting:
         elif words.startswith("  EXIT"):
             parse_result = self.parse_list[4].parse(words)
             self.exit = parse_result[0]
+            return parse_result
+        elif words.startswith("  FIELD"):
+            parse_result = self.parse_list[5].parse(words)
+            self.field = parse_result[0]
             return parse_result
         else:
             return 0
