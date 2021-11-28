@@ -93,7 +93,7 @@ FIELD wine
 
 - FIELD 设定脚本语言针对哪个领域，例如上例中是针对wine领域现在脚本支持酒：wine和食物：food两种特定领域，不设定本元素，为默认领域。
 
-  - 用法 FIELD （wine|food|空）
+  - 用法 FIELD （wine|food）
 
   
 
