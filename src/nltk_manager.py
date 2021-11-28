@@ -168,7 +168,7 @@ class Words_Match:
                 return 1
 
 
-def getPara(match_setting,field,Input_purify):
+def set_match_setting(match_setting,field,Input_purify):
         """
 
         :param match_setting: 匹配设置
@@ -202,9 +202,8 @@ def getPara(match_setting,field,Input_purify):
         :param Input_purify 用户输入
         :return:
         用法：
-        >>> getPara(match_setting,field,purified_user_input)
+        >>> set_match_setting(match_setting,field,purified_user_input)
         """
-
         bin_setting = int(bin(int(match_setting)),2)
         if bin_setting == 0b0:
             pass;

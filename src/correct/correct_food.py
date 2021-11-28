@@ -1,3 +1,6 @@
+"""
+@功能：词汇纠正模块，对输入词汇根据训练数据进行纠正
+"""
 import re, collections
 
 alphabet_set = 'abcdefghijklmnopqrestuvwxyz'
