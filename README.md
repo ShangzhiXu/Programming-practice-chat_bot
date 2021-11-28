@@ -49,7 +49,7 @@ Step exit
 
 ### 脚本语言描述
 
-这里建成本项目脚本语言为RSL(robot setting langugage)
+这里简称本项目脚本语言为RSL(robot setting langugage)
 
 RSL为块结构语言，块分为**Setting**和Step两种**类别**，块内内容称为**元素**，元素中内容称为**属性**。
 
@@ -111,21 +111,21 @@ FIELD wine
     Branch check|account,0,check
   ```
 
-  - Speak 到达本块向用户输出的内容为（字符串）
+ - Speak 到达本块向用户输出的内容为（字符串）
 
-    - 用法：Speak (字符串)
+   - 用法：Speak (字符串)
 
-  - Listen 等待用户输入时长，单位：秒
+ - Listen 等待用户输入时长，单位：秒
 
-    - 用法：Listen（数字）
+   - 用法：Listen（数字）
 
-  - Branch **匹配用户输入词汇**、**匹配模式**、**跳转到下一块名称**，这三个属性之间用","分开
+ - Branch **匹配用户输入词汇**、**匹配模式**、**跳转到下一块名称**，这三个属性之间用","分开
 
-    - 用法：Branch （字符串|字符串|...）,（数字）,（块名称）
+   - 用法：Branch （字符串|字符串|...）,（数字）,（块名称）
 
-    - **匹配用户输入词汇**：待匹配词汇，可以是单个词汇或多个词汇。例如上例中，如果在welcome块中，用户输入包含angry或bad或not good，则跳转到Step complaint块
+     - **匹配用户输入词汇**：待匹配词汇，可以是单个词汇或多个词汇。例如上例中，如果在welcome块中，用户输入包含angry或bad或not good，则跳转到Step complaint块
 
-    - **匹配模式**：
+     - **匹配模式**：
 
       ```java
       匹配模式：
