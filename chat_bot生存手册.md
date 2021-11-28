@@ -2,7 +2,20 @@
 
  **目录**
 
-[TOC]
+Chat_bot 生存手册
+介绍
+模块及调用关系
+模块及API介绍
+main
+getScript
+nltk_manager
+parse
+correct
+correct_food
+correct_wine
+使用方法
+脚本样例
+脚本语言描述
 
 
 
