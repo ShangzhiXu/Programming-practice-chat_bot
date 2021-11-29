@@ -36,7 +36,7 @@ Step apologize
   Listen 10
   Branch ok,0,default
 Step check
-  Speak you have 100¥
+  Speak the wine is 100¥
   Listen 10
   Branch ok,0,default
 Step default
@@ -44,10 +44,25 @@ Step default
   Listen 30
   Branch angry|bad|not good,0,complaint
   Branch wine|check,3,check
+  Branch ok,0,default
 Step exit
   Speak Good bye, have a good day!
   Listen 0
 
+
+```
+
+运行结果：
+```
+>>>How are you
+I an fine, thank you
+>>>Is there anything that I can help you？
+yes please tell me the price of the wine
+>>>the wine is 100¥
+ok
+>>>Is there anything that I can help you？
+no thanks
+>>>Good bye, have a good day!
 ```
 
 ### 脚本语言描述
