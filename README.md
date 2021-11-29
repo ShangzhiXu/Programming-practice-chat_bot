@@ -15,23 +15,22 @@ parse：https://github.com/r1chardj0n3s/parse
 Setting
   NAME Michael_chatbot
   VERSION 1.0
-  COPY_RIGHT @michael_2021.10.26
+  COPY_RIGHT @michael_2021.0.26
   START welcome
   EXIT exit
   FIELD wine
 Step welcome
   Speak How are you
   Listen 10
-  Branch good,3,complaint
+  Branch good|fine,3,default
   Branch angry|bad|not good,0,complaint
-  Branch bye|ok,0,default
-  Branch check|account,0,check
+  Branch wine|check,3,check
 Step complaint
   Speak what would you like to compliant?
   Listen 10
   Branch ?,0,apologize
-  Branch ok,0,default
-  Branch check,0,check
+  Branch fine,0,default
+  Branch wine|check,3,check
 Step apologize
   Speak sorry
   Listen 10
@@ -39,14 +38,16 @@ Step apologize
 Step check
   Speak you have 100¥
   Listen 10
-  Branch bye|ok,0,default
+  Branch ok,0,default
 Step default
-  Speak Is there anything else that I can help you？
+  Speak Is there anything that I can help you？
   Listen 30
-  Branch check|account,0,check
+  Branch angry|bad|not good,0,complaint
+  Branch wine|check,3,check
 Step exit
   Speak Good bye, have a good day!
   Listen 0
+
 ```
 
 ### 脚本语言描述
