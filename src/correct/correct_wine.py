@@ -9,7 +9,7 @@ def getLowerWord(text):
     """
     找到输入中的全部字母，转换为小写，搜索使用正则匹配
     用法：
-    >>>getLowerWord("text")
+    >>>>getLowerWord("text")
     :param text:
     :return:
     """
@@ -52,7 +52,7 @@ def train(new_words):
     如果存在这个单词，就把key的权重增加
 
     用法：
-    >>>new_words=train(getLowerWord(file.read()))
+    >>>>new_words=train(getLowerWord(file.read()))
     :param new_words:
     :return:
     """

@@ -84,6 +84,71 @@ no
 >>>Good bye, have a good day!
 ```
 
+### 脚本样例2
+```python
+Setting
+  NAME Michael_chatbot
+  VERSION 1.0
+  COPY_RIGHT @michael_2021.0.26
+  START welcome
+  EXIT exit
+  FIELD food
+Step welcome
+  Speak How are you
+  Listen 10
+  Branch good|fine,3,default
+  Branch food|check,3,food
+  Branch hotdog,3,hotdog
+Step complaint
+  Speak what would you like to compliant?
+  Listen 10
+  Branch ?,0,apologize
+  Branch fine,0,default
+  Branch food|check,3,food
+  Branch hotdog,3,hotdog
+Step apologize
+  Speak sorry
+  Listen 10
+  Branch ok,0,default
+Step food
+  Speak which food?
+  Listen 10
+  Branch hotdog,3,hotdog
+Step hotdog
+  Speak the hot dog is 10$,would you like to order?
+  Listen 10
+  Branch yes,0,buy
+Step buy
+  Speak done!Enjoy it
+  Branch thanks,0,default
+Step default
+  Speak Is there anything that I can help you？
+  Listen 30
+  Branch angry|bad|not good,0,complaint
+  Branch food|check,3,food
+  Branch hotdog,3,hotdog
+  Branch ok,0,default
+Step exit
+  Speak Good bye, have a good day!
+  Listen 0
+
+```
+运行结果：
+```buildoutcfg
+纠正hotdog输入错误
+>>>How are you
+fine
+>>>Is there anything that I can help you？
+hotdg please
+>>>the hot dog is 10$,would you like to order?
+yes
+>>>done!Enjoy it
+thanks
+>>>Good bye, have a good day!
+
+
+Process finished with exit code 0
+```
 ### 脚本语言描述
 
 这里简称本项目脚本语言为RSL(robot setting langugage)

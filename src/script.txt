@@ -4,32 +4,41 @@ Setting
   COPY_RIGHT @michael_2021.0.26
   START welcome
   EXIT exit
-  FIELD wine
+  FIELD food
 Step welcome
   Speak How are you
   Listen 10
   Branch good|fine,3,default
-  Branch angry|bad|not good,0,complaint
-  Branch wine|check,3,check
+  Branch food|check,3,food
+  Branch hotdog,3,hotdog
 Step complaint
   Speak what would you like to compliant?
   Listen 10
   Branch ?,0,apologize
   Branch fine,0,default
-  Branch wine|check,3,check
+  Branch food|check,3,food
+  Branch hotdog,3,hotdog
 Step apologize
   Speak sorry
   Listen 10
   Branch ok,0,default
-Step check
-  Speak the wine is 100¥
+Step food
+  Speak which food?
   Listen 10
-  Branch ok,0,default
+  Branch hotdog,3,hotdog
+Step hotdog
+  Speak the hot dog is 10$,would you like to order?
+  Listen 10
+  Branch yes,0,buy
+Step buy
+  Speak done!Enjoy it
+  Branch thanks,0,default
 Step default
   Speak Is there anything that I can help you？
   Listen 30
   Branch angry|bad|not good,0,complaint
-  Branch wine|check,3,check
+  Branch food|check,3,food
+  Branch hotdog,3,hotdog
   Branch ok,0,default
 Step exit
   Speak Good bye, have a good day!

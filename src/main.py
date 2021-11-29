@@ -10,7 +10,7 @@ def execute(step_name):
     """
     用来执行脚本，获取用户输入并进行匹配，并返回下一step的名称
     用法
-    >>>execute(next_step)
+    >>>>execute(next_step)
     :param step_name: 执行的step名称
     :return: 如果存在下一step，返回下一step的名称，否则返回0
     """
@@ -18,7 +18,7 @@ def execute(step_name):
     user_input = input()  # 获取用户输入
 
     purified_user_input = Input_purify(user_input)#根据用户输入创建自然语言处理类
-    for i in range(2,len(step_set[step_name])):
+    for i in range(2,len(step_set[step_name])):#i从2开始，因为前两个存的是Speak和listen
         branch = step_set[step_name][i]
         for match_word in branch.match_words:
             #对于step里每一个branch的match_words进行处理
