@@ -74,6 +74,14 @@ ok,thanks alot
 no thanks
 >>>Good bye, have a good day!
 
+例3,获取词干check
+>>>How are you
+ChEck the price
+>>>the wine is 100¥
+ok
+>>>Is there anything that I can help you？
+no
+>>>Good bye, have a good day!
 ```
 
 ### 脚本语言描述
@@ -168,7 +176,7 @@ FIELD wine
       4 去除非关键词， 去除用户输入中的例如'I'，'a'，'an'等常出现的非关键词汇，
               依托nltk的停止词汇表得出删除的词汇，
               该表由11种语言的2400个停止字组成，
-              见http://nltk.org/book/ch02.html
+              见http://www.nltk.org/book/ch02.html
       8 使用同义词，由于在英语中，可能用户来自不同地区，有不同习惯，
               依托ntlk的wordnet实现同义词获取
               例如用户输入"check"，
