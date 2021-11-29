@@ -1,0 +1,32 @@
+Setting
+  NAME h572s4yje0
+  VERSION 1.0
+  START gw pf8dsit
+  EXIT 8sgt 
+  FIELD locmudstirn
+Step gw pf8dsit
+  Speak avyku6 s
+  Listen 12
+  Branch iet,0,bg5y0oj8vh9
+  Branch f7|uzw|t2vh|xkp549 jfz|62e,0,b1zk2
+  Branch e4|j7z6,0,zp5x
+  Branch rg|6sm7 q39n|3nsyp| pe2|k52qxfc|7mw|ca21,0,rku67b3g0t 
+Step bg5y0oj8vh9
+  Speak vb
+  Listen 28
+  Branch lxb|djy|n3 ct|hpfmkjza8,0,e451 9mfuk
+Step e451 9mfuk
+  Speak m19f5nkv648
+  Listen 24
+Step b1zk2
+  Speak i7 h4
+  Listen 18
+Step zp5x
+  Speak 1mupd0
+  Listen 24
+Step rku67b3g0t 
+  Speak c qvbeipx51z
+  Listen 3
+Step 8sgt 
+  Speak uo0w5
+  Listen 5

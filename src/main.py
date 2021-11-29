@@ -33,10 +33,10 @@ def execute(step_name):
  # match and exec
 
 input_file = open("./script.txt")
-script = input_file.readlines()
+user_script = input_file.readlines()
 setting_set = Setting()  # A set to store settings
 step_set = {}# A set to store step
-getScript(script,setting_set,step_set)#读取脚本内容并存储
+getScript(user_script,setting_set,step_set)#读取脚本内容并存储
 next_step = execute(setting_set.start)#设定初始step，从用户设定第一个step开始
 while(next_step!= 0):
     next_step = execute(next_step)
