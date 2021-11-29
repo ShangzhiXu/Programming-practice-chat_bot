@@ -54,6 +54,7 @@ Step exit
 
 运行结果：
 ```
+例1
 >>>How are you
 I an fine, thank you
 >>>Is there anything that I can help you？
@@ -63,6 +64,16 @@ ok
 >>>Is there anything that I can help you？
 no thanks
 >>>Good bye, have a good day!
+
+例2
+>>>How are you
+I want to know the price of the wie
+>>>the wine is 100¥
+ok,thanks alot
+>>>Is there anything that I can help you？
+no thanks
+>>>Good bye, have a good day!
+
 ```
 
 ### 脚本语言描述
