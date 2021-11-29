@@ -65,7 +65,7 @@ ok
 no thanks
 >>>Good bye, have a good day!
 
-例2
+例2,wine输入错误
 >>>How are you
 I want to know the price of the wie
 >>>the wine is 100¥
