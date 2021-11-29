@@ -60,7 +60,9 @@ def train(new_words):
     for f in new_words:
         model[f] += 1
     return model
-file = open("/Users/lxpig/PycharmProjects/chat_bot/chat_bot/src/correct/food_review.txt", "r")
+
+#程序运行之前提前开始训练，提高性能
+file = open("correct/food_review.txt", "r")
 new_words = train(getLowerWord(file.read()))
 file.close()
 

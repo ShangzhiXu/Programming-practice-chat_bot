@@ -4,8 +4,9 @@
 @ 功能：输入为用户编写的脚本语言文件，格式为.txt，该模块生成语法树
 @ 工具：parse === copyright 2012-2021 Richard Jones <richard@python.org>
 """
-from chat_bot.src.parse import *
-from chat_bot.src.parse import compile
+# -*- coding: utf-8 -*-
+from .parse import *
+from .parse import compile
 
 
 class Setting:

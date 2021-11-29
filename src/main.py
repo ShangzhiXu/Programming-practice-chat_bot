@@ -2,7 +2,7 @@
 功能：程序入口，根据脚本执行每一个step并跳转到特定分支
 
 """
-
+# -*- coding: utf-8 -*-
 from chat_bot.src.getScprit import *
 from chat_bot.src.nltk_manager import *
 

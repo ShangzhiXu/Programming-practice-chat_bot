@@ -2,9 +2,10 @@
 """
 @功能：将用户脚本进行语法分析，并用set形成树结构进行保存
 """
+# -*- coding: utf-8 -*-
 
-from chat_bot.src.parser import *
-from chat_bot.src.nltk_manager import *
+from .parser import *
+
 
 def getScript(script,setting_set,step_set):
     """

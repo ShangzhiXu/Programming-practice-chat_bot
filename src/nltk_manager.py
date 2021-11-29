@@ -5,16 +5,16 @@
 @ 工具：nltk === Copyright (C) 2001-2021 NLTK Project
      github开源项目 === Bayes-one
 """
-
+# -*- coding: utf-8 -*-
 import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
 from nltk.util import ngrams
 
-from chat_bot.src.correct import correct
-from chat_bot.src.correct import correct_food
-from chat_bot.src.correct import correct_wine
+from .correct import correct
+from .correct import correct_food
+from .correct import correct_wine
 
 
 class Input_purify:
@@ -108,14 +108,14 @@ class Input_purify:
         """
         s = []
         for i in self.words_token:
-            print("input: "+i)
+            #print("input: "+i)
             if field == 'food':
                 corrected = correct_food.correct(i)
             elif field == 'wine':
                 corrected = correct_wine.correct(i)
             else:
                 corrected = correct.correct(i)
-            print("After correction: "+corrected )
+           # print("After correction: "+corrected )
             s.append(corrected)
         self.words_token = s
 
