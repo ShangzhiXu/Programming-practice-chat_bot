@@ -217,7 +217,7 @@ FIELD wine
 
    - 用法：Speak (字符串)，上例中，到达welcome块，向用户输出“How are you”
 
- - Listen 等待用户输入时长，单位：秒
+ - Listen 等待用户输入时长，单位：秒（默认不开启，肯不匹配用户输入）
 
    - 用法：Listen（数字）,上例中为监听10s
 
