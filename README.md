@@ -151,7 +151,7 @@ Process finished with exit code 0
 ```
 ### 脚本语言描述
 
-这里简称本项目脚本语言为RSL(robot setting langugage)
+这里简称本项目脚本语言为RSL(robot Specific langugage)
 
 RSL为块结构语言，块分为**Setting**和Step两种**类别**，块内内容称为**元素**，元素中内容称为**属性**。
 
